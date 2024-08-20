@@ -32,7 +32,7 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         {date: new Date('2024-10-26'), label: 'Homecoming game', segment: 'na', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/MOBF27JBSRCKHNWURS4M24G2T4.png'},
         {date: new Date('2024-11-04'), label: 'Start of election holiday', segment: 'start', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/DQGZ4DEU4NGK5APJB4KP3MENY4.png'},
         {date: new Date('2024-11-05'), label: 'End of election holiday', segment: 'end'},
-        {date: new Date('2024-11-14'), label: 'Last day to withdraw/PDF', segment: 'na', annotation: "Also the last day to drop classes for SEAS students", target:  new Date(2024, 10, 15)},// for some reason, this only works if i say the 15th. idk why
+        {date: new Date('2024-11-14'), label: 'Last day to withdraw/PDF', segment: 'na', annotation: "Last day to drop classes for SEAS students", target:  new Date(2024, 10, 15)},// for some reason, this only works if i say the 15th. idk why
         {date: new Date('2024-11-18'), label: 'Start registration', segment: 'start'},
         {date: new Date('2024-11-22'), label: 'End registration', segment: 'end'},
         {date: new Date('2024-11-27'), label: 'Start of Thanksgiving break', segment: 'start', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/IYOOWB5KB5BXJKSKIMHAZIVWNA.png'},
@@ -273,10 +273,10 @@ function addAnnotation(targetDate,message) {
         return this.getTotalLength(); 
     })
     .transition()
-    .duration(1000)  
+    .duration(500)  
     .attr("stroke-dashoffset", 0)
     .on("end", function() { // add the arrowhead when line is done being drawn
-      calendarGroup.selectAll('.annotation-arrow').attr('marker-end', 'url(#arrowhead)')
+      d3.select(this).attr('marker-end', 'url(#arrowhead)')
     });  
       
   
