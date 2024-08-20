@@ -328,7 +328,7 @@ for (let i =0; i < events.length+2;i++) {
     .style('fill','#75aadb')
 
 
-    // fade out 
+    // fade out  old events
     if(events[i].segment !== 'end') { 
       svg.selectAll(`.event-${i-1}`).transition()
       .duration(1000)
@@ -338,22 +338,21 @@ for (let i =0; i < events.length+2;i++) {
       .style('fill','white');
     }
 
-      if(events[i].segment == 'start') {
-        const startDate = events[i].date;
-        const endDate = events[i+1].date;
-        highlightDateRange(startDate, endDate);
-    
-          }
+    // highlight multiple dates (for segment)
+    if(events[i].segment == 'start') {
+      const startDate = events[i].date;
+      const endDate = events[i+1].date;
+      highlightDateRange(startDate, endDate);
+  
+    }
 
-
-      if(events[i].annotation) {
+    // add annotation
+    if(events[i].annotation) {
       const targetDate = events[i].target;
       const message = events[i].annotation;
-
-
       addAnnotation(targetDate,message);
 
-      }
+    }
     
 
     });
@@ -362,20 +361,16 @@ for (let i =0; i < events.length+2;i++) {
 
     
 
-  
 var stepFunctionsUp = [
         
         
 ];
 
 
-
-
-
-
 for (let i =0; i < events.length;i++) {
-  stepFunctionsUp.push(function() { // NEED TO GIGURE OUT WHY IT DOESNT SHOW LAST EVENT
+  stepFunctionsUp.push(function() { 
    
+    // fade out annotations
     svg.selectAll('.annotation') 
     .transition()
     .duration(1000)
@@ -394,13 +389,11 @@ for (let i =0; i < events.length;i++) {
 
       
      highlightDateRange(startDate, endDate);
-
- 
  
         }
 
 
-    const monthIndex = events[i].date.getUTCMonth(); // 0-based index
+    const monthIndex = events[i].date.getUTCMonth(); 
     transitionToMonthUp(monthIndex);
     });
 
@@ -416,7 +409,6 @@ for (let i =0; i < events.length;i++) {
 }
 
     
-
 // Create scrollable sections
 const steps = d3.select('#scroll-steps')
     .selectAll('div')
@@ -451,44 +443,41 @@ for (let i = 0; i < events.length; i++) {
 
   svg.select(`#day-${id}`)
   .classed(`event-${i}`, true);
-  /*
-  console.log(`Selecting ID: ${id}`); // Debug: Print the ID being selected
-
-  const selection = svg.select(`#day-${id}`);
-  console.log(`Selection: ${selection.empty() ? 'Not Found' : 'Found'}`); // Debug: Check if selection is found
   
-  if (!selection.empty()) {
-      selection.classed('filled-square', true); // Add the class to the element with the matching ID
-      console.log(`Class added to ID: ${id}`); // Debug: Confirm class was added
-  } else {
-      console.log(`ID not found: ${id}`); // Debug: ID not found in the selection
-  }
-  */
 }
 
 
+// function for highlighting range of dates 
 function highlightDateRange(startDate, endDate) {
   // Ensure startDate is before endDate
   if (startDate > endDate) {
     [startDate, endDate] = [endDate, startDate];
   }
 
+
+
   // Clear previous highlights
   svg.selectAll('rect').transition()
   .duration(1000)
   .style('fill','white')
   .on('end', function() {
-    // Callback to apply new highlights after previous ones are cleared
+
+    // apply new highlights after previous ones are erased
     let currentDate = new Date(startDate);
     while (currentDate <= endDate) {
       const month = currentDate.getUTCMonth() + 1;
       const day = currentDate.getUTCDate();
       const dayCellId = `day-${month}-${day}`;
 
+      const finalsWeekend = ['day-12-14', 'day-12-15']; // we don't want to highlight this
+ 
       svg.select(`#${dayCellId}`)
         .transition()
         .duration(1000) // Duration for highlighting
-        .style('fill', '#75aadb'); // New highlight color
+        .style('fill', function() {
+          // Determine the fill color based on the dayCellId
+          return finalsWeekend.includes(dayCellId) ? '#FFFFFF' : '#75aadb'; // White for specific days, default color for others
+      });
 
       currentDate.setUTCDate(currentDate.getUTCDate() + 1);
     }
@@ -533,7 +522,7 @@ function transitionToMonth(newMonthIndex) {
     .duration(1000)
     .attr('transform', 'translate(0, 0)'); // Slide into view
 
-  // Update the current month index
+  // update current month index
   currentMonthIndex = newMonthIndex;
 }
 
@@ -556,14 +545,14 @@ function transitionToMonthUp(newMonthIndex) {
     .duration(1000)
     .attr('transform', `translate(0, ${-verticalOffset})`)
     .on('end', function() {
-      // After the transition, hide the old calendar
+      // After the transition, hide old calendar
       currentCalendar.style('display', 'none');
     });
 
-  // Position the new month off-screen (below the visible area) and then slide it into view
+  // Position the new month off-screen (below the visible area), and then slide it into view
   newCalendar
     .attr('transform', `translate(0, ${verticalOffset})`) // Start off-screen (below the visible area)
-    .style('display', 'block') // Ensure the new calendar is visible
+    .style('display', 'block') // make sure new calendar is visible
     .transition()
     .duration(1000)
     .attr('transform', 'translate(0, 0)'); // Slide into view
