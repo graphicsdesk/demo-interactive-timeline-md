@@ -73,7 +73,7 @@ const cellSize = Math.min(width / 7, height / 8); // choose whichever is smalles
               lineHeight = 1.1, // ems
               x = text.attr("x"),
               y = text.attr("y"),
-              dy = 0, 
+              dy = -1, 
               tspan = text.text(null)
                           .append("tspan")
                           .attr("x", x)
@@ -283,7 +283,7 @@ function addAnnotation(targetDate,message) {
   // add annotationtext
   calendarGroup.append("text")
       .attr("x",x+cellSize/8)
-      .attr("y", y-cellSize/1.6)
+      .attr("y", y-cellSize/1.8)
       .text(`${message}`)
       .style('opacity','100')
       .style("font-size", "14px")
