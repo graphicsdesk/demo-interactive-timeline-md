@@ -54,23 +54,24 @@ const margin = {top: 20, right: 70, bottom: 30, left: 40};
 
 // Define the timeline data
 const events = [
-    {date: new Date('2024-08-26'), event_no: '1', label: 'First day of NSOP', segment:'start',link: 'https://cdn.pixabay.com/photo/2017/05/11/16/40/emoji-2304720_1280.png'},
-    {date: new Date('2024-09-01'), event_no: '2', label: 'End of NSOP', segment:'end'},
-    {date: new Date('2024-09-03'), event_no: '3', label: 'First day of class', segment:'start',link: 'https://cdn.pixabay.com/photo/2016/08/21/18/48/emoticon-1610518_1280.png'},
-    {date: new Date('2024-09-13'), event_no: '4', label: 'End of shopping period', segment:'end'},
-    {date: new Date('2024-10-08'), event_no: '5', label: 'Last day to drop classes', segment:'na'},
-    {date: new Date('2024-10-17'), event_no: '6', label: 'Fall midterm date', segment:'na', link: 'https://cdn.pixabay.com/photo/2016/04/01/00/28/face-1298202_640.png'},
-    {date: new Date('2024-10-26'), event_no: '7', label: 'Homecoming game', segment:'na', link:'https://st.depositphotos.com/1001911/1222/v/450/depositphotos_12221489-stock-illustration-big-smile-emoticon.jpg'},
-    {date: new Date('2024-11-04'), event_no: '8', label: 'Start of election holiday', segment:'start',link:'https://i.pinimg.com/736x/3b/54/30/3b543046fc90ac07131e54d4c3dde292.jpg'},
-    {date: new Date('2024-11-05'), event_no: '9', label: 'End of election holiday', segment:'end'},
-    {date: new Date('2024-11-14'), event_no: '10', label: 'Last day to withdraw/PDF', segment:'na'},
-    {date: new Date('2024-11-27'), event_no: '11', label: 'Start of Thanksgiving break', segment:'start',link: 'https://i.pinimg.com/originals/a2/5c/19/a25c198273a072fc9a608ee01a3bff80.png'},
-    {date: new Date('2024-11-29'), event_no: '12', label: 'End of Thanksgiving break', segment:'end'},
-    {date: new Date('2024-12-09'), event_no: '13', label: 'Last day of class', segment:'na',link:'https://t4.ftcdn.net/jpg/05/91/75/69/360_F_591756994_RWtNuVkWDKEIer7eozEne5xe3rZo2QbD.jpg'},
-    {date: new Date('2024-12-10'), event_no: '14', label: 'Start of reading period', segment:'start',link: 'https://cdn.pixabay.com/photo/2017/05/11/16/40/emoji-2304720_1280.png'},
-    {date: new Date('2024-12-12'), event_no: '15', label: 'End of reading period', segment:'end'},
-    {date: new Date('2024-12-13'), event_no: '16', label: 'Start of finals', segment:'start'},
-    {date: new Date('2024-12-20'), event_no: '17', label: 'End of finals', segment:'end'}
+    {date: new Date('2024-08-26'), label: 'First day of NSOP', segment:'start',link: 'https://cdn.pixabay.com/photo/2017/05/11/16/40/emoji-2304720_1280.png'},
+    {date: new Date('2024-09-01'), label: 'End of NSOP', segment:'end'},
+    {date: new Date('2024-09-03'), label: 'First day of class', segment:'start',link: 'https://cdn.pixabay.com/photo/2016/08/21/18/48/emoticon-1610518_1280.png'},
+    {date: new Date('2024-09-13'), label: 'End of shopping period', segment:'end'},
+    {date: new Date('2024-10-08'), label: 'Last day to drop classes', segment:'na'},
+    {date: new Date('2024-10-17'), label: 'Fall midterm date', segment:'na', link: 'https://cdn.pixabay.com/photo/2016/04/01/00/28/face-1298202_640.png'},
+    {date: new Date('2024-10-25'), label: 'Start Homcoming and family days', segment:'start'},
+    {date: new Date('2024-10-26'), label: 'Homecoming game', segment:'end', link:'https://st.depositphotos.com/1001911/1222/v/450/depositphotos_12221489-stock-illustration-big-smile-emoticon.jpg'},
+    {date: new Date('2024-11-04'), label: 'Start of election holiday', segment:'start',link:'https://i.pinimg.com/736x/3b/54/30/3b543046fc90ac07131e54d4c3dde292.jpg'},
+    {date: new Date('2024-11-05'), label: 'End of election holiday', segment:'end'},
+    {date: new Date('2024-11-14'), label: 'Last day to withdraw/PDF', segment:'na'},
+    {date: new Date('2024-11-27'), label: 'Start of Thanksgiving break', segment:'start',link: 'https://i.pinimg.com/originals/a2/5c/19/a25c198273a072fc9a608ee01a3bff80.png'},
+    {date: new Date('2024-11-29'), label: 'End of Thanksgiving break', segment:'end'},
+    {date: new Date('2024-12-09'), label: 'Last day of class', segment:'na',link:'https://t4.ftcdn.net/jpg/05/91/75/69/360_F_591756994_RWtNuVkWDKEIer7eozEne5xe3rZo2QbD.jpg'},
+    {date: new Date('2024-12-10'), label: 'Start of reading period', segment:'start',link: 'https://cdn.pixabay.com/photo/2017/05/11/16/40/emoji-2304720_1280.png'},
+    {date: new Date('2024-12-12'), label: 'End of reading period', segment:'end'},
+    {date: new Date('2024-12-13'), label: 'Start of finals', segment:'start'},
+    {date: new Date('2024-12-20'), label: 'End of finals', segment:'end'}
 
     
     
