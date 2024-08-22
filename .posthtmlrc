@@ -36,12 +36,13 @@
           }
         ],
         "headline": "Fall 2024: A breakdown and academic timeline",
-        "date": "August 20, 2024",
+        "date": "August 22, 2024",
         "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/anuthmi-waas/\">Anuthmi Waas</a>",
         "byline2": "Graphic by <a href=\"https://www.columbiaspectator.com/contributors/molly-durawa/\">Molly Durawa</a>",
-        "byline3": "Illustrations by <b>Saumya Chaudhry</b>",
-        "USE_NEWS_NAV": true,
+        "byline3": "Illustrations by Saumya Chaudhry",
+        "USE_NEWS_NAV": false,
         "USE_EYE_NAV": false,
+        "USE_SPECTRUM_NAV": true,
         "USE_COVER_HED": false,
         "IS_EMBED": false,
         "DOC_URL": "https://docs.google.com/document/d/1IcYah7VrgjnH3LmxEZeFgXUCuW27BEDYhyeiICvvjfk/edit"

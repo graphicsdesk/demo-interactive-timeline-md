@@ -142,12 +142,6 @@ b {
   }
 }
 
-@media (max-width: 500px) {
-  .cover-hed header {
-    margin-top: 50%;
-  } // THIS IS A CHANGE MOLLY MADE 
-}
-
 .cover-caption {
   margin: 7px auto 60px;
   font-size: 15px;
@@ -170,12 +164,23 @@ header {
     font-weight: 400;
   }
 
+  /*
   #headline {
     margin: 50px 0 20px;
     font-size: 45px;
     line-height: 1.15;
     font-weight: 500;
     font-family: Playfair Display;
+  }
+  */
+  #headline {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: lighter;
+    color: rgb(63, 65, 75);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .deck {
@@ -185,18 +190,18 @@ header {
     margin-bottom: 14px;
     text-align: center;
   }
-
-  #dek {
-    font-family: Playfair Display;
-    font-size: 20px;
-    line-height: 1.45;
-    margin-bottom: 14px;
-    text-align: center;
-    font-weight: normal;
-    }   
-
+/*
   .byline {
     font-weight: 600;
+  }
+  */
+  .byline {
+   font-family: Lato, serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(63, 65, 75);
+    text-align: center;
+  
 
     a {
       color: #121212;
@@ -262,10 +267,15 @@ header {
   width: 100%;
   height: $navbar-height;
   position: fixed;
+
   background-color: #fff;
   z-index: 1000;
   transition-duration: $fade-transition-duration;
   box-shadow: $navbar-shadow;
+}
+
+#navbar.spectrum-navbar {
+  justify-content: center;
 }
 
 #navbar.only-eye-logo {
@@ -293,6 +303,25 @@ header {
   }
 }
 
+#spectrum-logo-container {
+  display: flex;
+  height: 60px;
+  z-index: 1;
+
+  #spectrum-logo {
+    width: 200px;
+  }
+}
+
+#crown-logo-container {
+  display: flex;
+  height: 30px;
+  z-index: 1;
+
+  #crown-logo {
+    width: 30px;
+  }
+}
 #navbar.news-navbar {
   height: 46px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.27);
@@ -312,9 +341,6 @@ header {
 
   #cds-logo {
     height: 19px;
-  }
-  #spectrum-logo {
-    height: 30px;
   }
 }
 
@@ -371,6 +397,35 @@ header {
     text-decoration: underline;
   }
 }
+#spectrum-nav-links {
+
+
+  flex: 1 1;
+  display: flex;
+  align-items: center;
+  transition-duration: $fade-transition-duration;
+  margin: 0px 2rem;
+text-decoration: none;
+
+font-size: 1rem;
+font-family: Lato, sans-serif;
+color: black;
+
+  a {
+    margin: 0;
+    margin-left: 42px;
+    font-family: $graphik;
+    font-size: 14px;
+    color: #121212;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+
 
 // Collapse navbar
 @media (max-width: 760px) {
@@ -382,7 +437,7 @@ header {
     }
   }
 
-  #nav-links {
+  #spectrum-nav-links {
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
@@ -452,7 +507,7 @@ header {
     font-family: $georgia;
     color: #666;
     margin: 7px 0 0 0;
-    //padding: 0 $gbody-padding / 2;
+    padding: 0 $gbody-padding / 2;
     line-height: 1.3;
 
     .image-credit {
@@ -463,7 +518,7 @@ header {
 
 @media (max-width: 660px) {
   .image .image-caption-text {
-    font-size: 15px;
+    font-size: 25px;
   }
 }
 
@@ -492,13 +547,6 @@ header {
     padding: 0 $gbody-padding;
   }
 }
-
-@media (min-width: 767px) {
-  .image {
-    max-width: 50vw;
-  }
- }
- 
 
 .graphic {
   margin: 30px auto;
