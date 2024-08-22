@@ -24,7 +24,8 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const events = [
         {date: new Date('2024-08-25'), label: 'First day of NSOP', segment: 'start',  annotation: "Barnard starts NSOP here", target:  new Date(2024, 7, 28)},
         {date: new Date('2024-09-01'), label: 'End of NSOP', segment: 'end'},
-        {date: new Date('2024-09-03'), label: 'First day of class', segment: 'start', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/SXKBMSVSGRG33IB2XATXOLRLD4.png'},
+        {date: new Date('2024-09-03'), label: 'First day of class', segment: 'na', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/SXKBMSVSGRG33IB2XATXOLRLD4.png'},
+        {date: new Date('2024-09-03'), label: 'Start shopping period', segment: 'start',},
         {date: new Date('2024-09-13'), label: 'End of shopping period', segment: 'end', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/BKWCFTETX5D3XFUR2KICPMFP4E.png'},
         {date: new Date('2024-10-08'), label: 'Last day to drop classes', segment: 'na'},
         {date: new Date('2024-10-17'), label: 'Fall midterm date', segment: 'na', link: 'https://cloudfront-us-east-1.images.arcpublishing.com/spectator/WBKEKOAX3BED3LR7466RLHXJKY.png'},
