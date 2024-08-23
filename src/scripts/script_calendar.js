@@ -1,5 +1,6 @@
 import scrollama from 'scrollama';
-import { select, event } from 'd3-selection';
+import * as d3 from "d3";
+
 
 
 
