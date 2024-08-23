@@ -1,3 +1,8 @@
+import scrollama from 'scrollama';
+import { select, event } from 'd3-selection';
+
+
+
 let width, height;
 let vbWidth, vbHeight;
 const vbMinX = 0;
@@ -10,6 +15,8 @@ var sticky = scrolly.select('#sticky-thing');
 var article = scrolly.select('article');
 var step = article.selectAll('.step');
   
+
+
 
 
 // create list of month names and days of the week (js stores these as numbers that correspond to the index of the following lists)
