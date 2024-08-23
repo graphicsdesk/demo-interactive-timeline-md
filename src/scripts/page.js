@@ -22,7 +22,7 @@ function init() {
 const SECTION_MAIN_SELECTOR = 'div#fusion-app';
 
 // ARTICLE_SELECTOR is where Arc Publishing puts the actual article content
-const ARTICLE_SELECTOR = 'div#fusion-app > div > div > div';
+const ARTICLE_SELECTOR = 'div#fusion-app > div';
 
 function hoistArticle() {
   // Store nodes of interest
